@@ -1,0 +1,39 @@
+extends layout
+block links
+    link(rel="stylesheet", href="/stylesheets/login.css")
+block scripts
+    script(src="/javascripts/login.js", defer, type="module") 
+block content
+    section.form-sec(aria-label="login form container")
+        .wrapper
+            .left-layout
+                i.fa-brands.fa-node-js
+            .right-layout
+                .header
+                    a(
+                        href="/signup",
+                        role="link",
+                        aria-label="go to sign up page"
+                    ) create a new account ?
+                    include includes/themeSwitcher
+                form
+                    .email-wrapper
+                        label(for="email") Email
+                        input(type="text", name="email", autocomplete="off")
+                        span.error
+                    .password-wrapper
+                        label(for="password") password
+                        input(
+                            type="password",
+                            name="password",
+                            autocomplete="off"
+                        )
+                        span.error
+                    button(type="submit", aria-label="login with credentials") log in
+                    .separator(aria-hidden="true") Or
+                a#loginGithub(
+                    type="button",
+                    aria-label="log in with github",
+                    href="/auth/github"
+                ) log in with
+                    i.fa-brands.fa-github

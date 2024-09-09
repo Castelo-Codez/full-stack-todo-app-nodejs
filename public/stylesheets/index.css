@@ -1,0 +1,200 @@
+header .container h1 {
+  font-weight: 400;
+  font-style: normal;
+}
+
+button#theme-switcher {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+button#theme-switcher svg {
+  width: 30px;
+  color: var(--text);
+}
+button#theme-switcher svg:last-child {
+  display: none;
+}
+
+html.dark #theme-switcher svg:last-child {
+  display: block;
+}
+html.dark #theme-switcher svg:first-child {
+  display: none;
+}
+
+section#form-handler .container form button {
+  background: no-repeat;
+  border: 1px solid var(--text);
+  width: 100%;
+  padding: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text);
+  margin-top: 50px;
+}
+section#form-handler .container form button.disabled {
+  cursor: not-allowed;
+}
+
+section#form-handler .container form .todo-wrapper input {
+  padding: 5px 10px;
+  width: 100%;
+  background: none;
+  color: var(--text);
+  border: 1px solid var(--text);
+}
+section#form-handler .container form .todo-wrapper input:focus {
+  outline: none;
+}
+section#form-handler .container form .todo-wrapper .error {
+  opacity: 0;
+  color: var(--err);
+}
+section#form-handler .container form .has-error.todo-wrapper label {
+  color: var(--err);
+}
+section#form-handler .container form .has-error.todo-wrapper .error {
+  opacity: 1;
+}
+
+button[disabled],
+a[disabled] {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.container {
+  max-width: 800px;
+  padding: 0px 15px;
+  margin: 0 auto;
+}
+
+header {
+  padding: 10px 0px;
+  border-bottom: 1px solid var(--border);
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .container h1 {
+  font-size: 0.999rem;
+}
+@media (min-width: 768px) {
+  header .container h1 {
+    font-size: 1rem;
+  }
+}
+header .container .right-layout {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  position: relative;
+}
+header .container .right-layout #toggle-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 15px);
+  right: 0;
+  z-index: 5555;
+}
+header .container .right-layout #toggle-menu[expanded] {
+  display: block;
+}
+header .container .right-layout #toggle-menu button {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  font-size: 14px;
+  padding: 11px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--background);
+}
+header .container .right-layout > button {
+  border-radius: 50%;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+header .container .right-layout > button .image-container {
+  width: 30px;
+  height: 30px;
+}
+header .container .right-layout > button .image-container img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+section#form-handler {
+  padding-top: 80px;
+}
+section#form-handler .container form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 25px;
+}
+section#form-handler .container form .todo-wrapper .error {
+  margin-top: 10px;
+  display: block;
+}
+section#form-handler .container form button {
+  margin-top: 0px;
+  text-transform: capitalize;
+}
+@media (min-width: 768px) {
+  section#form-handler .container form {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  section#form-handler .container form .todo-wrapper {
+    flex-basis: 70%;
+  }
+  section#form-handler .container form button {
+    flex-basis: 20%;
+  }
+}
+
+section#table-data {
+  padding-top: 50px;
+}
+section#table-data .container {
+  overflow-x: auto;
+}
+section#table-data .container span {
+  display: block;
+  text-align: center;
+}
+section#table-data table {
+  --bs-table-bg: white !important;
+}
+section#table-data table button {
+  background: none;
+  border: none;
+  color: var(--text);
+}
+
+input[type=checkbox] {
+  cursor: pointer;
+}
+
+html.dark #Account svg {
+  color: white;
+}
+html.dark #toggle-menu button {
+  background: var(--background);
+}
+html.dark section#table-data table.table-dark {
+  --bs-table-bg: black !important;
+  --bs-table-active-bg: #2c3034 !important;
+}/*# sourceMappingURL=index.css.map */

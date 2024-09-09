@@ -1,0 +1,121 @@
+section.form-sec .header a {
+  font-weight: 500;
+  font-style: normal;
+}
+
+button#theme-switcher {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+button#theme-switcher svg {
+  width: 30px;
+  color: var(--text);
+}
+button#theme-switcher svg:last-child {
+  display: none;
+}
+
+html.dark #theme-switcher svg:last-child {
+  display: block;
+}
+html.dark #theme-switcher svg:first-child {
+  display: none;
+}
+
+section.form-sec form button {
+  background: no-repeat;
+  border: 1px solid var(--text);
+  width: 100%;
+  padding: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text);
+  margin-top: 50px;
+}
+section.form-sec form button.disabled {
+  cursor: not-allowed;
+}
+
+section.form-sec form > div input {
+  padding: 5px 10px;
+  width: 100%;
+  background: none;
+  color: var(--text);
+  border: 1px solid var(--text);
+}
+section.form-sec form > div input:focus {
+  outline: none;
+}
+section.form-sec form > div .error {
+  opacity: 0;
+  color: var(--err);
+}
+section.form-sec form > div.has-error label {
+  color: var(--err);
+}
+section.form-sec form > div.has-error .error {
+  opacity: 1;
+}
+
+section.form-sec form {
+  margin-top: 25px;
+}
+section.form-sec form > div {
+  margin-bottom: 15px;
+}
+section.form-sec form > div * {
+  display: block;
+}
+section.form-sec form > div *:not(:last-child) {
+  margin-bottom: 10px;
+}
+section.form-sec .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section.form-sec .header a {
+  font-size: 1rem;
+  color: var(--text);
+  text-transform: capitalize;
+}
+
+section.form-sec {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.form-sec .wrapper {
+  padding: 0px 20px;
+  min-width: 300px;
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button[disabled],
+a[disabled] {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+section.form-sec {
+  min-height: 100vh;
+}
+section.form-sec .wrapper {
+  flex-direction: column;
+}
+section.form-sec .wrapper,
+section.form-sec .header {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  section.form-sec .wrapper,
+  section.form-sec .header {
+    max-width: 400px;
+  }
+}/*# sourceMappingURL=signup.css.map */

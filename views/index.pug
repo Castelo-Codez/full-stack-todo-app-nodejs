@@ -1,0 +1,68 @@
+extends layout
+block links
+    link(rel="stylesheet", href="/stylesheets/index.css")
+block scripts
+    script(src="/javascripts/index.js", type="module", defer) 
+block content
+    header(role="banner")
+        .container
+            h1 welcome #{ user.username }
+            .right-layout
+                include includes/themeSwitcher
+                button#Account(
+                    aria-expanded="false",
+                    aria-controls="toggle-menu"
+                ) 
+                    if user.avatar
+                        .image-container
+                            img(src=`${user.avatar}`, alt=`${user.username}`)
+                    else
+                        i.fa-solid.fa-user
+                #toggle-menu
+                    button#logOut(aria-label="logout", type="button") log out
+                        i.fa-solid.fa-right-from-bracket
+    main(role="main")
+        section#form-handler(aria-label="form handler")
+            .container
+                form
+                    .todo-wrapper
+                        input(type="text", name="todo", autocomplete="off")
+                        span.error error
+                    button(
+                        type="submit",
+                        role="button",
+                        aria-label="add todos",
+                        title="add todo button"
+                    ) add todo
+        section#table-data
+            .container
+                table.table.table-striped(class=dark ? "table-dark" : "")
+                    thead
+                        th Todo Title
+                        th Id
+                        th Date
+                        th Status
+                        th
+                    tbody
+                        each todo in user.todos 
+                            tr(id=todo.id)
+                                td #{ todo.title }
+                                td #{ todo.id }
+                                td #{ todo.createdAt }
+                                td
+                                    .form-check.form-switch
+                                        input.form-check-input(
+                                            type="checkbox",
+                                            role="switch",
+                                            checked=todo.status,
+                                            id=todo.id
+                                        )
+                                td
+                                    button#removeTodo(
+                                        aria-label="remove todo",
+                                        type="button",
+                                        role="button"
+                                    )
+                                        i.fa-solid.fa-trash
+                if user.todos.length < 1
+                    span No items

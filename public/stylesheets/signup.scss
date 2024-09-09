@@ -1,0 +1,22 @@
+@import "./global/globals";
+section.form-sec {
+    min-height: 100vh;
+    @extend %mainseclayout;
+    .header {
+        @extend %headerstyle;
+    }
+    form {
+        @extend %mainformstyle;
+    }
+    .wrapper {
+        flex-direction: column;
+    }
+    .wrapper,
+    .header {
+        width: 100%;
+        @media (min-width: 768px) {
+            max-width: 400px;
+        }
+    }
+}
+

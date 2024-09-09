@@ -1,0 +1,164 @@
+section.form-sec .wrapper .left-layout + div .header a {
+  font-weight: 500;
+  font-style: normal;
+}
+
+button#theme-switcher {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+button#theme-switcher svg {
+  width: 30px;
+  color: var(--text);
+}
+button#theme-switcher svg:last-child {
+  display: none;
+}
+
+html.dark #theme-switcher svg:last-child {
+  display: block;
+}
+html.dark #theme-switcher svg:first-child {
+  display: none;
+}
+
+section.form-sec .wrapper .left-layout + div form + a, section.form-sec .wrapper .left-layout + div form button {
+  background: no-repeat;
+  border: 1px solid var(--text);
+  width: 100%;
+  padding: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text);
+  margin-top: 50px;
+}
+section.form-sec .wrapper .left-layout + div form + a.disabled, section.form-sec .wrapper .left-layout + div form button.disabled {
+  cursor: not-allowed;
+}
+
+section.form-sec .wrapper .left-layout + div form > div input {
+  padding: 5px 10px;
+  width: 100%;
+  background: none;
+  color: var(--text);
+  border: 1px solid var(--text);
+}
+section.form-sec .wrapper .left-layout + div form > div input:focus {
+  outline: none;
+}
+section.form-sec .wrapper .left-layout + div form > div .error {
+  opacity: 0;
+  color: var(--err);
+}
+section.form-sec .wrapper .left-layout + div form > div.has-error label {
+  color: var(--err);
+}
+section.form-sec .wrapper .left-layout + div form > div.has-error .error {
+  opacity: 1;
+}
+
+section.form-sec .wrapper .left-layout + div form {
+  margin-top: 25px;
+}
+section.form-sec .wrapper .left-layout + div form > div {
+  margin-bottom: 15px;
+}
+section.form-sec .wrapper .left-layout + div form > div * {
+  display: block;
+}
+section.form-sec .wrapper .left-layout + div form > div *:not(:last-child) {
+  margin-bottom: 10px;
+}
+section.form-sec .wrapper .left-layout + div .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section.form-sec .wrapper .left-layout + div .header a {
+  font-size: 1rem;
+  color: var(--text);
+  text-transform: capitalize;
+}
+
+section.form-sec {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.form-sec .wrapper {
+  padding: 0px 20px;
+  min-width: 300px;
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button[disabled],
+a[disabled] {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+section.form-sec .wrapper {
+  height: 400px;
+}
+section.form-sec .wrapper > div {
+  flex-basis: 100%;
+}
+@media (min-width: 768px) {
+  section.form-sec .wrapper > div {
+    flex-basis: 45%;
+  }
+}
+section.form-sec .wrapper .left-layout {
+  display: none;
+  border: 1px solid;
+  border-radius: var(--radius);
+}
+@media (min-width: 768px) {
+  section.form-sec .wrapper .left-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+section.form-sec .wrapper .left-layout svg {
+  font-size: 200px;
+}
+section.form-sec .wrapper .left-layout + div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section.form-sec .wrapper .left-layout + div form .separator {
+  margin-bottom: 0;
+  margin-top: 16px;
+  text-align: center;
+  position: relative;
+}
+section.form-sec .wrapper .left-layout + div form .separator::after, section.form-sec .wrapper .left-layout + div form .separator::before {
+  content: "";
+  background: var(--text);
+  position: absolute;
+  width: 43%;
+  height: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+section.form-sec .wrapper .left-layout + div form .separator::before {
+  left: 0;
+}
+section.form-sec .wrapper .left-layout + div form .separator::after {
+  right: 0;
+}
+section.form-sec .wrapper .left-layout + div form + a {
+  text-decoration: none;
+  margin-top: 20px;
+  display: flex;
+  -moz-column-gap: 6px;
+       column-gap: 6px;
+}/*# sourceMappingURL=login.css.map */

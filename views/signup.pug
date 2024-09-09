@@ -1,0 +1,30 @@
+extends layout
+block links
+    link(rel="stylesheet", href="/stylesheets/signup.css")
+block scripts
+    script(src="https://unpkg.com/axios/dist/axios.min.js", defer)
+    script(src="/javascripts/signup.js", defer, type="module") 
+block content
+    section.form-sec(aria-label="login form container")
+        .wrapper
+            .header
+                a(
+                    href="/login",
+                    role="link",
+                    aria-label="go to sign up page"
+                ) already have an account ?
+                include includes/themeSwitcher
+            form
+                .username-wrapper
+                    label(for="username") username
+                    input(type="text", name="username", autocomplete="off")
+                    span.error
+                .email-wrapper
+                    label(for="email") Email
+                    input(type="text", name="email", autocomplete="off")
+                    span.error
+                .password-wrapper
+                    label(for="password") password
+                    input(type="password", name="password", autocomplete="off")
+                    span.error
+                button(type="submit", aria-label="register up new account") sign up

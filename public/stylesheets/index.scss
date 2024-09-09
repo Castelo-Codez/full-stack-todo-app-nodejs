@@ -1,0 +1,144 @@
+@import "./global/globals";
+.container {
+    max-width: 800px;
+    padding: 0px 15px;
+    margin: 0 auto;
+}
+header {
+    padding: 10px 0px;
+    border-bottom: 1px solid var(--border);
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h1 {
+            font-size: 0.999rem;
+            @media (min-width: 768px) {
+                font-size: 1rem;
+            }
+            @extend%poppins-regular;
+        }
+        .right-layout {
+            display: flex;
+            align-items: center;
+            column-gap: 1rem;
+            position: relative;
+            #toggle-menu {
+                display: none;
+                &[expanded] {
+                    display: block;
+                }
+                position: absolute;
+                top: calc(100% + 15px);
+                right: 0;
+                z-index: 5555;
+                button {
+                    width: 100px;
+                    display: flex;
+                    justify-content: center;
+                    cursor: pointer;
+                    column-gap: 8px;
+                    font-size: 14px;
+                    padding: 11px;
+                    border-radius: 6px;
+                    border: 1px solid var(--border);
+                    color: var(--text);
+                    background: var(--background);
+                }
+            }
+
+            > button {
+                border-radius: 50%;
+                border: none;
+                background: none;
+                cursor: pointer;
+
+                .image-container {
+                    width: 30px;
+                    height: 30px;
+                    img {
+                        width: 100%;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+section#form-handler {
+    padding-top: 80px;
+    .container {
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 25px;
+            .todo-wrapper {
+                @extend%main-input-container-style;
+                .error {
+                    margin-top: 10px;
+                    display: block;
+                }
+            }
+            button {
+                @extend%mainbuttonstyle;
+                margin-top: 0px;
+                text-transform: capitalize;
+            }
+            @media (min-width: 768px) {
+                flex-direction: row;
+                justify-content: space-between;
+                .todo-wrapper {
+                    flex-basis: 70%;
+                }
+                button {
+                    flex-basis: 20%;
+                }
+            }
+        }
+    }
+}
+section#table-data {
+    .container {
+        overflow-x: auto;
+        span {
+            display: block;
+            text-align: center;
+        }
+    }
+    padding-top: 50px;
+    table {
+        --bs-table-bg: white !important;
+        button {
+            background: none;
+            border: none;
+            color: var(--text);
+        }
+    }
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+html.dark {
+    #Account {
+        svg {
+            color: white;
+        }
+    }
+    #toggle-menu {
+        button {
+            background: var(--background);
+        }
+    }
+    section#table-data {
+        table {
+            &.table-dark {
+                --bs-table-bg: black !important;
+                --bs-table-active-bg: #2c3034 !important;
+            }
+        }
+    }
+}
