@@ -1,3 +1,5 @@
+import dotenv from "dotenv";
+dotenv.config();
 import {
     Request,
     Response,
@@ -19,10 +21,10 @@ import controllers from "./controllers/controllers";
 import passport from "passport";
 import User from "./model/User";
 import { connect } from "mongoose";
+import createMemoryStore from "memorystore";
 var app: Express = express();
 app.set("views", path.resolve("./", "views"));
 app.set("view engine", "pug");
-
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -31,11 +33,15 @@ app.use(express.static(path.resolve("./", "public")));
 (async function () {
     await connect(process.env.MONGODB_URL as string);
 })();
+const memorystore = createMemoryStore(session);
 app.use(
     session({
         secret: process.env.AUTHSEC as string,
         saveUninitialized: false,
         resave: true,
+        store: new memorystore({
+            checkPeriod: 86400000,
+        }),
         cookie: {
             maxAge: 1000 * 60 * 60 * 24 * 3,
         },
@@ -53,6 +59,13 @@ passport.deserializeUser(async function (id, done) {
     done(null, $user);
 });
 app.use(controllers);
+app.use((req, res, next) => {
+    (async function () {
+        await connect(process.env.MONGODB_URL as string).then(() => {
+            next();
+        });
+    })();
+});
 app.use("/login", loginPage);
 app.use("/signup", signupPage);
 app.use((req, res, next) => {

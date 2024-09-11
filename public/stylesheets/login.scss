@@ -63,10 +63,20 @@ section {
                             display: flex;
                             column-gap: 6px;
                             @extend%mainbuttonstyle;
+                            svg {
+                                fill: var(--text);
+                            }
                         }
                     }
                 }
             }
         }
+    }
+}
+
+.left-layout {
+    svg {
+        fill: var(--text);
+        stroke: var(--text);
     }
 }

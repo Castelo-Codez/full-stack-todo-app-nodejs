@@ -1,10 +1,15 @@
-# Todo App With NodeJs 
+# Todo App With NodeJs
 
 ## for install dep
+
 ```sh
 npm install
 ```
-## for run project 
+
+## for run project
+
 ```sh
 npm start
 ```
+
+"mode": "development"

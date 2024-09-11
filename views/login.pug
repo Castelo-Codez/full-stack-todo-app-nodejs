@@ -1,13 +1,39 @@
 extends layout
 block links
-    link(rel="stylesheet", href="/stylesheets/login.css")
+    link(rel="stylesheet", href="/stylesheets/login.min.css")
 block scripts
-    script(src="/javascripts/login.js", defer, type="module") 
+    script(src="/javascripts/login.min.js", defer, type="module") 
 block content
     section.form-sec(aria-label="login form container")
         .wrapper
             .left-layout
-                i.fa-brands.fa-node-js
+                svg(
+                    width="200px",
+                    height="200px",
+                    viewBox="0 0 48 48",
+                    xmlns="http://www.w3.org/2000/svg",
+                    fill="#ffffff",
+                    stroke="#ffffff"
+                )
+                    g#SVGRepo_tracerCarrier(
+                        stroke-linecap="round",
+                        stroke-linejoin="round"
+                    )
+                    g#SVGRepo_iconCarrier
+                    g#SVGRepo_bgCarrier(stroke-width="0")
+                        title node-js
+                        g#Layer_2(data-name="Layer 2")
+                            g#invisible_box(data-name="invisible box")
+                                rect(width="48", height="48", fill="none")
+                            g#Q3_icons(data-name="Q3 icons")
+                                g
+                                    path(
+                                        d="M42.3,11.8,25.7,2.4a4,4,0,0,0-3.4,0L5.7,11.8A3.4,3.4,0,0,0,4,14.7V33.3a3.4,3.4,0,0,0,1.7,2.9l4.4,2.5a7.2,7.2,0,0,0,3.8,1c3.1,0,4.9-1.9,4.9-5.1V16.3a.5.5,0,0,0-.5-.5H16.2a.5.5,0,0,0-.5.5V34.6c0,1.5-1.5,2.9-3.9,1.7L7.2,33.7a.5.5,0,0,1-.2-.4V14.7a.8.8,0,0,1,.2-.5L23.7,4.9h.6l16.5,9.3a.8.8,0,0,1,.2.5V33.3a.5.5,0,0,1-.2.4L24.3,43a.6.6,0,0,1-.6,0l-4.2-2.4a.3.3,0,0,0-.4,0l-2.5,1.1c-.3.1-.7.2.1.7l5.6,3.1a3.1,3.1,0,0,0,3.4,0l16.6-9.3A3.4,3.4,0,0,0,44,33.3V14.7A3.4,3.4,0,0,0,42.3,11.8Z"
+                                    )
+                                    path(
+                                        d="M29.1,30.3c-4.4,0-5.3-1-5.7-3.1a.4.4,0,0,0-.4-.4H20.8a.4.4,0,0,0-.4.4c0,2.7,1.5,6,8.7,6,5.2,0,8.2-2,8.2-5.5s-2.4-4.5-7.5-5.1-5.6-1-5.6-2.2.4-2.2,4.2-2.2,4.7.7,5.2,2.9a.5.5,0,0,0,.5.4h2.1l.4-.2a.4.4,0,0,0,.1-.3c-.3-3.9-3-5.7-8.3-5.7s-7.5,2-7.5,5.2,2.8,4.5,7.3,5,5.9,1.2,5.9,2.3S32.6,30.3,29.1,30.3Z"
+                                    )
+
             .right-layout
                 .header
                     a(
@@ -36,4 +62,21 @@ block content
                     aria-label="log in with github",
                     href="/auth/github"
                 ) log in with
-                    i.fa-brands.fa-github
+                    svg(
+                        width="20px",
+                        height="20px",
+                        viewBox="0 0 24 24",
+                        xmlns="http://www.w3.org/2000/svg",
+                        fill="#ffffff"
+                    )
+                        g#SVGRepo_bgCarrier(stroke-width="0")
+                        g#SVGRepo_tracerCarrier(
+                            stroke-linecap="round",
+                            stroke-linejoin="round"
+                        )
+                        g#SVGRepo_iconCarrier
+                            title github
+                            rect(width="24", height="24", fill="none")
+                            path(
+                                d="M12,2A10,10,0,0,0,8.84,21.5c.5.08.66-.23.66-.5V19.31C6.73,19.91,6.14,18,6.14,18A2.69,2.69,0,0,0,5,16.5c-.91-.62.07-.6.07-.6a2.1,2.1,0,0,1,1.53,1,2.15,2.15,0,0,0,2.91.83,2.16,2.16,0,0,1,.63-1.34C8,16.17,5.62,15.31,5.62,11.5a3.87,3.87,0,0,1,1-2.71,3.58,3.58,0,0,1,.1-2.64s.84-.27,2.75,1a9.63,9.63,0,0,1,5,0c1.91-1.29,2.75-1,2.75-1a3.58,3.58,0,0,1,.1,2.64,3.87,3.87,0,0,1,1,2.71c0,3.82-2.34,4.66-4.57,4.91a2.39,2.39,0,0,1,.69,1.85V21c0,.27.16.59.67.5A10,10,0,0,0,12,2Z"
+                            )

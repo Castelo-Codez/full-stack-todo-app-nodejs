@@ -1,7 +1,6 @@
 import { $removeError, $setError } from "./globalfuntions.js";
 const form = document.querySelector("form");
 
-
 form?.addEventListener("submit", async (e) => {
     e.preventDefault();
     let $credetialsHasError: {
@@ -82,8 +81,7 @@ form?.addEventListener("submit", async (e) => {
                             type: "email",
                             message: "this email already exist",
                         });
-                    }
-                    //@ts-expect-error
+                    } //@ts-expect-error
                     axios
                         .post("/login", {
                             email: res.data.email,

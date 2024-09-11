@@ -2,7 +2,7 @@ extends layout
 block links
     link(rel="stylesheet", href="/stylesheets/index.css")
 block scripts
-    script(src="/javascripts/index.js", type="module", defer) 
+    script(src="/javascripts/index.min.js", defer, type="module") 
 block content
     header(role="banner")
         .container
@@ -17,10 +17,60 @@ block content
                         .image-container
                             img(src=`${user.avatar}`, alt=`${user.username}`)
                     else
-                        i.fa-solid.fa-user
+                        svg(
+                            width="25px",
+                            height="25px",
+                            viewBox="0 0 24 24",
+                            fill="none",
+                            xmlns="http://www.w3.org/2000/svg"
+                        )
+                            g#SVGRepo_bgCarrier(stroke-width="0")
+                            g#SVGRepo_tracerCarrier(
+                                stroke-linecap="round",
+                                stroke-linejoin="round"
+                            )
+                            g#SVGRepo_iconCarrier
+                                circle(
+                                    cx="12",
+                                    cy="6",
+                                    r="4",
+                                    stroke="#1C274C",
+                                    stroke-width="1.5"
+                                )
+                                path(
+                                    d="M19.9975 18C20 17.8358 20 17.669 20 17.5C20 15.0147 16.4183 13 12 13C7.58172 13 4 15.0147 4 17.5C4 19.9853 4 22 12 22C14.231 22 15.8398 21.8433 17 21.5634",
+                                    stroke="#1C274C",
+                                    stroke-width="1.5",
+                                    stroke-linecap="round"
+                                )
+                                    path(
+                                        d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z",
+                                        stroke="#000000",
+                                        stroke-width="2",
+                                        stroke-linecap="round",
+                                        stroke-linejoin="round"
+                                    )
+
                 #toggle-menu
                     button#logOut(aria-label="logout", type="button") log out
-                        i.fa-solid.fa-right-from-bracket
+                        svg(
+                            width="20px",
+                            height="20px",
+                            viewBox="0 0 24 24",
+                            fill="none",
+                            xmlns="http://www.w3.org/2000/svg"
+                        )
+                            g#SVGRepo_bgCarrier(stroke-width="0")
+                            g#SVGRepo_tracerCarrier(
+                                stroke-linecap="round",
+                                stroke-linejoin="round"
+                            )
+                            g#SVGRepo_iconCarrier
+                                path(
+                                    d="M13.2328 16.4569C12.9328 16.7426 12.9212 17.2173 13.2069 17.5172C13.4926 17.8172 13.9673 17.8288 14.2672 17.5431L13.2328 16.4569ZM19.5172 12.5431C19.8172 12.2574 19.8288 11.7827 19.5431 11.4828C19.2574 11.1828 18.7827 11.1712 18.4828 11.4569L19.5172 12.5431ZM18.4828 12.5431C18.7827 12.8288 19.2574 12.8172 19.5431 12.5172C19.8288 12.2173 19.8172 11.7426 19.5172 11.4569L18.4828 12.5431ZM14.2672 6.4569C13.9673 6.17123 13.4926 6.18281 13.2069 6.48276C12.9212 6.78271 12.9328 7.25744 13.2328 7.5431L14.2672 6.4569ZM19 12.75C19.4142 12.75 19.75 12.4142 19.75 12C19.75 11.5858 19.4142 11.25 19 11.25V12.75ZM5 11.25C4.58579 11.25 4.25 11.5858 4.25 12C4.25 12.4142 4.58579 12.75 5 12.75V11.25ZM14.2672 17.5431L19.5172 12.5431L18.4828 11.4569L13.2328 16.4569L14.2672 17.5431ZM19.5172 11.4569L14.2672 6.4569L13.2328 7.5431L18.4828 12.5431L19.5172 11.4569ZM19 11.25L5 11.25V12.75L19 12.75V11.25Z",
+                                    fill="#ffffff"
+                                )
+
     main(role="main")
         section#form-handler(aria-label="form handler")
             .container
@@ -36,7 +86,7 @@ block content
                     ) add todo
         section#table-data
             .container
-                table.table.table-striped(class=dark ? "table-dark" : "")
+                table.table(class=dark ? "table-dark" : "")
                     thead
                         th Todo Title
                         th Id
@@ -63,6 +113,24 @@ block content
                                         type="button",
                                         role="button"
                                     )
-                                        i.fa-solid.fa-trash
+                                        svg(
+                                            fill="#ffffff",
+                                            width="25px",
+                                            height="25px",
+                                            viewBox="0 0 24 24",
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        )
+                                            g#SVGRepo_bgCarrier(
+                                                stroke-width="0"
+                                            )
+                                            g#SVGRepo_tracerCarrier(
+                                                stroke-linecap="round",
+                                                stroke-linejoin="round"
+                                            )
+                                            g#SVGRepo_iconCarrier
+                                                path(
+                                                    d="M5.755,20.283,4,8H20L18.245,20.283A2,2,0,0,1,16.265,22H7.735A2,2,0,0,1,5.755,20.283ZM21,4H16V3a1,1,0,0,0-1-1H9A1,1,0,0,0,8,3V4H3A1,1,0,0,0,3,6H21a1,1,0,0,0,0-2Z"
+                                                )
+
                 if user.todos.length < 1
                     span No items

@@ -69,8 +69,7 @@ form === null || form === void 0 ? void 0 : form.addEventListener("submit", asyn
                     type: "email",
                     message: "this email already exist",
                 });
-            }
-            //@ts-expect-error
+            } //@ts-expect-error
             axios
                 .post("/login", {
                 email: res.data.email,

@@ -38,13 +38,16 @@ header {
                     display: flex;
                     justify-content: center;
                     cursor: pointer;
-                    column-gap: 8px;
+                    column-gap: 4px;
                     font-size: 14px;
                     padding: 11px;
                     border-radius: 6px;
                     border: 1px solid var(--border);
                     color: var(--text);
                     background: var(--background);
+                    svg {
+                        fill: var(--text);
+                    }
                 }
             }
 
@@ -53,7 +56,6 @@ header {
                 border: none;
                 background: none;
                 cursor: pointer;
-
                 .image-container {
                     width: 30px;
                     height: 30px;
@@ -61,6 +63,9 @@ header {
                         width: 100%;
                         border-radius: 50%;
                     }
+                }
+                svg {
+                    fill: var(--text);
                 }
             }
         }
@@ -77,6 +82,9 @@ section#form-handler {
             row-gap: 25px;
             .todo-wrapper {
                 @extend%main-input-container-style;
+                input {
+                    border: 2px solid var(--border);
+                }
                 .error {
                     margin-top: 10px;
                     display: block;
@@ -86,6 +94,7 @@ section#form-handler {
                 @extend%mainbuttonstyle;
                 margin-top: 0px;
                 text-transform: capitalize;
+                border: 2px solid var(--border);
             }
             @media (min-width: 768px) {
                 flex-direction: row;
@@ -102,6 +111,7 @@ section#form-handler {
 }
 section#table-data {
     .container {
+        overflow: hidden;
         overflow-x: auto;
         span {
             display: block;
@@ -110,7 +120,15 @@ section#table-data {
     }
     padding-top: 50px;
     table {
-        --bs-table-bg: white !important;
+        border-spacing: 0px;
+        text-align: center;
+        thead {
+            tr {
+                td {
+                    border-top: 1px solid var(--border);
+                }
+            }
+        }
         button {
             background: none;
             border: none;
@@ -133,12 +151,53 @@ html.dark {
             background: var(--background);
         }
     }
-    section#table-data {
-        table {
-            &.table-dark {
-                --bs-table-bg: black !important;
-                --bs-table-active-bg: #2c3034 !important;
-            }
+}
+button#removeTodo {
+    cursor: pointer;
+    svg {
+        fill: var(--text);
+    }
+}
+thead {
+    tr {
+        td {
+            border-top: 1px solid #95999c;
         }
     }
+}
+
+input[type="checkbox"] {
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 18px;
+    background: #ccc;
+    border-radius: 50px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+input:checked[type="checkbox"] {
+    background: #7da6ff;
+}
+
+input[type="checkbox"]::after {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 19px;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+    transition: 0.4s;
+}
+
+input:checked[type="checkbox"]::after {
+    left: 50%;
 }

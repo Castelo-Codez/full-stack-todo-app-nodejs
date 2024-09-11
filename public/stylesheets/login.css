@@ -10,16 +10,16 @@ button#theme-switcher {
 }
 button#theme-switcher svg {
   width: 30px;
-  color: var(--text);
+  fill: var(--text);
 }
-button#theme-switcher svg:last-child {
+button#theme-switcher svg:first-child {
   display: none;
 }
 
-html.dark #theme-switcher svg:last-child {
+html.dark #theme-switcher svg:first-child {
   display: block;
 }
-html.dark #theme-switcher svg:first-child {
+html.dark #theme-switcher svg:last-child {
   display: none;
 }
 
@@ -103,6 +103,112 @@ a[disabled] {
   cursor: not-allowed;
 }
 
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+
+.table-dark {
+  color: #fff;
+}
+
+.table-dark th,
+.table-dark td,
+.table-dark thead th {
+  border-color: #454d55;
+}
+
+.table-dark.table-bordered {
+  border: 0;
+}
+
+.table-dark.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.table-dark.table-hover tbody tr:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.075);
+}
+
+@media (max-width: 575.98px) {
+  .table-responsive-sm {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .table-responsive-sm > .table-bordered {
+    border: 0;
+  }
+}
+@media (max-width: 767.98px) {
+  .table-responsive-md {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .table-responsive-md > .table-bordered {
+    border: 0;
+  }
+}
+@media (max-width: 991.98px) {
+  .table-responsive-lg {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .table-responsive-lg > .table-bordered {
+    border: 0;
+  }
+}
+@media (max-width: 1199.98px) {
+  .table-responsive-xl {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .table-responsive-xl > .table-bordered {
+    border: 0;
+  }
+}
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-responsive > .table-bordered {
+  border: 0;
+}
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-responsive > .table-bordered {
+  border: 0;
+}
+
 section.form-sec .wrapper {
   height: 400px;
 }
@@ -161,4 +267,12 @@ section.form-sec .wrapper .left-layout + div form + a {
   display: flex;
   -moz-column-gap: 6px;
        column-gap: 6px;
+}
+section.form-sec .wrapper .left-layout + div form + a svg {
+  fill: var(--text);
+}
+
+.left-layout svg {
+  fill: var(--text);
+  stroke: var(--text);
 }/*# sourceMappingURL=login.css.map */
